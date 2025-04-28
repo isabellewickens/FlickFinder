@@ -11,12 +11,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.flickfinder.model.Movie;
+import com.flickfinder.model.Person;
 import com.flickfinder.util.Database;
 import com.flickfinder.util.Seeder;
 
 /**
- * Test for the Movie Data Access Object.
- * This uses an in-memory database for testing purposes.
+ * Test for the Movie Data Access Object. This uses an in-memory database for
+ * testing purposes.
  */
 
 class MovieDAOTest {
@@ -34,11 +35,10 @@ class MovieDAOTest {
 	Seeder seeder;
 
 	/**
-	 * Sets up the database connection and creates the tables.
-	 * We are using an in-memory database for testing purposes.
-	 * This gets passed to the Database class to get a connection to the database.
-	 * As it's a singleton class, the entire application will use the same
-	 * connection.
+	 * Sets up the database connection and creates the tables. We are using an
+	 * in-memory database for testing purposes. This gets passed to the Database
+	 * class to get a connection to the database. As it's a singleton class, the
+	 * entire application will use the same connection.
 	 */
 	@BeforeEach
 	void setUp() {
@@ -50,10 +50,9 @@ class MovieDAOTest {
 	}
 
 	/**
-	 * Tests the getAllMovies method.
-	 * We expect to get a list of all movies in the database.
-	 * We have seeded the database with 5 movies, so we expect to get 5 movies back.
-	 * At this point, we avoid checking the actual content of the list.
+	 * Tests the getAllMovies method. We expect to get a list of all movies in the
+	 * database. We have seeded the database with 5 movies, so we expect to get 5
+	 * movies back. At this point, we avoid checking the actual content of the list.
 	 */
 	@Test
 	void testGetAllMovies() {
@@ -67,8 +66,8 @@ class MovieDAOTest {
 	}
 
 	/**
-	 * Tests the getMovieById method.
-	 * We expect to get the movie with the specified id.
+	 * Tests the getMovieById method. We expect to get the movie with the specified
+	 * id.
 	 */
 	@Test
 	void testGetMovieById() {
@@ -92,6 +91,20 @@ class MovieDAOTest {
 		try {
 			Movie movie = movieDAO.getMovieById(1000);
 			assertEquals(null, movie);
+		} catch (SQLException e) {
+			fail("SQLException thrown");
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test
+	void testGetPeopleByMovieId() {
+		// write an assertThrows for a SQLException
+
+		try {
+			List<Person> stars = movieDAO.getPeopleByMovieId(1);
+			assertEquals("[1|Tim Robbins|1958, 2|Morgan Freeman|1937]", stars.toString());
 		} catch (SQLException e) {
 			fail("SQLException thrown");
 			e.printStackTrace();

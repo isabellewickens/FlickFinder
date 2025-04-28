@@ -11,5 +11,62 @@ public class Person {
 	// - Check the ERD and database schema in the docs folder
 	// (./docs/database_schema.md) to ensure each column in the People table
 	// has an attribute in the model. (DELETE THIS COMMENT WHEN DONE)
+	
+	private int id;
+	private String name;
+	private int birth;
+
+
+	public Person(int id, String name, int birth) {
+		this.id = id;
+		this.name = name;
+		this.birth = birth;
+	}
+
+	
+	public int getId() {
+		return id;
+	}
+
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	public int getBirth() {
+		return birth;
+	}
+
+	/**
+	 * Sets the release year of the movie.
+	 *
+	 * @param year the release year to set
+	 */
+	public void setBirth(int birth) {
+		this.birth = birth;
+	}
+
+	/**
+	 * Returns a string representation of the Movie object.
+	 * This is primarily used for debugging purposes.
+	 *
+	 * @return a string representation of the Movie object
+	 */
+	@Override
+	public String toString() {
+		return id + "|" + name + "|" + birth ;
+	}
+
 
 }

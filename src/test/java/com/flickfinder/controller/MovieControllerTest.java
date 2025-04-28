@@ -120,5 +120,35 @@ class MovieControllerTest {
 		movieController.getMovieById(ctx);
 		verify(ctx).status(404);
 	}
+	
+	
+	
+	@Test
+	void testGetPeopleByMovieID() {
+		when(ctx.pathParam("id")).thenReturn("1");
+		movieController.getPeopleByMovieId(ctx);
+		try {
+			verify(movieDAO).getPeopleByMovieId(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testThrows500ExceptionWhenGetPeopleByMovieIdDatabaseError() throws SQLException {
+		when(ctx.pathParam("id")).thenReturn("1");
+		when(movieDAO.getPeopleByMovieId(1)).thenThrow(new SQLException());
+		movieController.getPeopleByMovieId(ctx);
+		verify(ctx).status(500);
+	}
+
+
+	@Test
+	void testThrows404ExceptionWhenNoMovieFound2() throws SQLException {
+		when(ctx.pathParam("id")).thenReturn("1");
+		when(movieDAO.getPeopleByMovieId(1)).thenReturn(null);
+		movieController.getPeopleByMovieId(ctx);
+		verify(ctx).status(404);
+	}
 
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.flickfinder.model.Movie;
+import com.flickfinder.model.Person;
 import com.flickfinder.util.Database;
 
 /**
@@ -45,10 +46,10 @@ public class MovieDAO {
 		List<Movie> movies = new ArrayList<>();
 
 		Statement statement = connection.createStatement();
-		
+
 		// I've set the limit to 10 for development purposes - you should do the same.
 		ResultSet rs = statement.executeQuery("select * from movies LIMIT 50");
-		
+
 		while (rs.next()) {
 			movies.add(new Movie(rs.getInt("id"), rs.getString("title"), rs.getInt("year")));
 		}
@@ -74,10 +75,33 @@ public class MovieDAO {
 
 			return new Movie(rs.getInt("id"), rs.getString("title"), rs.getInt("year"));
 		}
-		
+
 		// return null if the id does not return a movie.
 
 		return null;
+
+	}
+
+	public List<Person> getPeopleByMovieId(int id) throws SQLException {
+
+		List<Person> stars = new ArrayList<>();
+		String statement = "select * from people where id in (select person_id from stars where movie_id = ?)";
+		PreparedStatement ps = connection.prepareStatement(statement);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			stars.add(new Person(rs.getInt("id"), rs.getString("name"), rs.getInt("birth")));
+
+		}
+	
+		if (stars.isEmpty()) {
+			return null;
+		}
+		
+		return stars;
+
 
 	}
 
