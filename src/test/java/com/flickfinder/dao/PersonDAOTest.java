@@ -40,7 +40,7 @@ class PersonDAOTest {
 	@Test
 	void testGetAllPeople() {
 		try {
-			List<Person> people = personDAO.getAllPeople();
+			List<Person> people = personDAO.getAllPeople(50);
 			assertEquals(5, people.size());
 		} catch (SQLException e) {
 			fail("SQLException thrown");

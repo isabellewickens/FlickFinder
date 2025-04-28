@@ -54,9 +54,21 @@ class MovieControllerTest {
 
 	@Test
 	void testGetAllMovies() {
+		when(ctx.queryParam("limit")).thenReturn(null);
 		movieController.getAllMovies(ctx);
 		try {
-			verify(movieDAO).getAllMovies();
+			verify(movieDAO).getAllMovies(50);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testGetAllMoviesLimit() {
+		when(ctx.queryParam("limit")).thenReturn("10");
+		movieController.getAllMovies(ctx);
+		try {
+			verify(movieDAO).getAllMovies(10);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -70,7 +82,7 @@ class MovieControllerTest {
 	 */
 	@Test
 	void testThrows500ExceptionWhenGetAllDatabaseError() throws SQLException {
-		when(movieDAO.getAllMovies()).thenThrow(new SQLException());
+		when(movieDAO.getAllMovies(50)).thenThrow(new SQLException());
 		movieController.getAllMovies(ctx);
 		verify(ctx).status(500);
 	}

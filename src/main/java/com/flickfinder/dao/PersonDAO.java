@@ -33,12 +33,15 @@ public class PersonDAO {
 			connection = database.getConnection();
 		}
 
-	public List<Person> getAllPeople() throws SQLException {
+	public List<Person> getAllPeople(int limit) throws SQLException {
 		List<Person> people = new ArrayList<>();
+		
+		String statement = "select * from people LIMIT ?";
 
-		Statement statement = connection.createStatement();
+		PreparedStatement ps = connection.prepareStatement(statement);
+		ps.setInt(1, limit);
+		ResultSet rs = ps.executeQuery();
 
-		ResultSet rs = statement.executeQuery("select * from people LIMIT 50");
 
 		while (rs.next()) {
 			people.add(new Person(rs.getInt("id"), rs.getString("name"), rs.getInt("birth")));

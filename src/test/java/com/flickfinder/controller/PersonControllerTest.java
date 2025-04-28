@@ -34,9 +34,21 @@ class PersonControllerTest {
 
 	@Test
 	void testGetAllMovies() {
+		when(ctx.queryParam("limit")).thenReturn(null);
 		personController.getAllPeople(ctx);
 		try {
-			verify(personDAO).getAllPeople();
+			verify(personDAO).getAllPeople(50);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testGetAllPeopleLimit() {
+		when(ctx.queryParam("limit")).thenReturn("10");
+		personController.getAllPeople(ctx);
+		try {
+			verify(personDAO).getAllPeople(10);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -45,7 +57,7 @@ class PersonControllerTest {
 
 	@Test
 	void testThrows500ExceptionWhenGetAllDatabaseError() throws SQLException {
-		when(personDAO.getAllPeople()).thenThrow(new SQLException());
+		when(personDAO.getAllPeople(50)).thenThrow(new SQLException());
 		personController.getAllPeople(ctx);
 		verify(ctx).status(500);
 	}
