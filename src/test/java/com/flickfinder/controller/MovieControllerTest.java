@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.sql.SQLException;
+import java.util.Collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -62,7 +63,7 @@ class MovieControllerTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	void testGetAllMoviesLimit() {
 		when(ctx.queryParam("limit")).thenReturn("10");
@@ -132,9 +133,7 @@ class MovieControllerTest {
 		movieController.getMovieById(ctx);
 		verify(ctx).status(404);
 	}
-	
-	
-	
+
 	@Test
 	void testGetPeopleByMovieID() {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -145,7 +144,7 @@ class MovieControllerTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	void testThrows500ExceptionWhenGetPeopleByMovieIdDatabaseError() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -154,12 +153,64 @@ class MovieControllerTest {
 		verify(ctx).status(500);
 	}
 
-
 	@Test
 	void testThrows404ExceptionWhenNoMovieFound2() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
-		when(movieDAO.getPeopleByMovieId(1)).thenReturn(null);
+		when(movieDAO.getPeopleByMovieId(1)).thenReturn(Collections.emptyList());
 		movieController.getPeopleByMovieId(ctx);
+		verify(ctx).status(404);
+	}
+
+	@Test
+	void testGetRatingsByYear() {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("voteLimit")).thenReturn("1000");
+		movieController.getRatingsByYear(ctx);
+		try {
+			verify(movieDAO).getRatingsByYear(1994, 50, 1000);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	void testGetRatingsByYearWithLimit() throws SQLException {
+	    when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("5");
+	    when(ctx.queryParam("voteLimit")).thenReturn("1000");
+	    movieController.getRatingsByYear(ctx);
+
+	    verify(movieDAO).getRatingsByYear(1994, 5, 1000);
+	}
+	
+	@Test
+	void testGetRatingsByYearWithVoteLimit() throws SQLException {
+	    when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("voteLimit")).thenReturn("20000");
+	    movieController.getRatingsByYear(ctx);
+
+	    verify(movieDAO).getRatingsByYear(1994, 50, 20000);
+	}
+
+	@Test
+	void testThrows500ExceptionWhenGetRatingsByYearDatabaseError() throws SQLException {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("voteLimit")).thenReturn("1000");
+		when(movieDAO.getRatingsByYear(1994, 50, 1000)).thenThrow(new SQLException());
+		movieController.getRatingsByYear(ctx);
+		verify(ctx).status(500);
+	}
+
+	@Test
+	void testThrows404ExceptionWhenNoMovieFound3() throws SQLException {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("voteLimit")).thenReturn("1000");
+		when(movieDAO.getRatingsByYear(1994, 50, 1000)).thenReturn(Collections.emptyList());
+		movieController.getRatingsByYear(ctx);
 		verify(ctx).status(404);
 	}
 

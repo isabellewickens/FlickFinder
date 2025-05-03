@@ -9,21 +9,23 @@
 
 # Assignment 1 - Report
 
-**Student Name: [Your Name]**
+**Student Name: Isabelle Wickens**
 
-**Student ID: [Your ID]**
+**Student ID: 6851539**
 
 ## 1.1 Proto Personas
 
 ### Persona 1
 
- **[add persona title ]**
+ **James Williams, A University Student**
 
-[add persona description ]
+James, age 19, is a University Student studying Psychology at the University of Surrey in South East England.  He was born in Kent and lives 1 hour from the University, but he stays on campus in a house with his friends. His mother is a GP and his father is a PE teacher at a secondary school. Jack also has a younger sister who is in college training to be a musical theatre performer. He is currently unemplyed as he is focusing on his studies, but used to be an English tutor for GCSE students when he was studying for his A Levels.
+
+He is in his first year at University and as well as his completing his degree, he enjoys going to different University societies and spending time with his housemates. His favourite society is the Film Society, and he frequently hosts movie nights for his friends.
 
 ### Persona 2
 
-** [add persona title ]**
+**Sarah King, A Small Business Owner**
 
 [add persona description]
 

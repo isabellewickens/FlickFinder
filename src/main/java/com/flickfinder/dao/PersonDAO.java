@@ -83,10 +83,6 @@ public class PersonDAO {
 
 		}
 	
-		if (movies.isEmpty()) {
-			return null;
-		}
-		
 		return movies;
 
 

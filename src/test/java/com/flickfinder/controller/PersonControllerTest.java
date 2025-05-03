@@ -5,6 +5,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.sql.SQLException;
+import java.util.Collections;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -113,7 +114,7 @@ class PersonControllerTest {
 	@Test
 	void testThrows404ExceptionWhenNoPersonFound2() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
-		when(personDAO.getMoviesStarringPerson(1)).thenReturn(null);
+		when(personDAO.getMoviesStarringPerson(1)).thenReturn(Collections.emptyList());
 		personController.getMoviesStarringPerson(ctx);
 		verify(ctx).status(404);
 	}

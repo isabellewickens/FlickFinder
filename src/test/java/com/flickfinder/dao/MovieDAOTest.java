@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import com.flickfinder.model.Movie;
 import com.flickfinder.model.Person;
+import com.flickfinder.model.MovieRating;
 import com.flickfinder.util.Database;
 import com.flickfinder.util.Seeder;
 
@@ -58,7 +59,7 @@ class MovieDAOTest {
 	void testGetAllMovies() {
 		try {
 			List<Movie> movies = movieDAO.getAllMovies(50);
-			assertEquals(5, movies.size());
+			assertEquals(6, movies.size());
 		} catch (SQLException e) {
 			fail("SQLException thrown");
 			e.printStackTrace();
@@ -105,6 +106,19 @@ class MovieDAOTest {
 		try {
 			List<Person> stars = movieDAO.getPeopleByMovieId(1);
 			assertEquals("[1|Tim Robbins|1958, 2|Morgan Freeman|1937]", stars.toString());
+		} catch (SQLException e) {
+			fail("SQLException thrown");
+			e.printStackTrace();
+		}
+
+	}
+	
+	@Test
+	void testGetRatingsByYear() {
+		// write an assertThrows for a SQLException
+		try {
+			List<MovieRating> movies = movieDAO.getRatingsByYear(1994, 50, 1000);
+			assertEquals("[1|The Shawshank Redemption|9.3|2200000|1994, 6|The River Wild|7.2|300000|1994]", movies.toString());
 		} catch (SQLException e) {
 			fail("SQLException thrown");
 			e.printStackTrace();
