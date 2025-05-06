@@ -154,6 +154,7 @@ public class MovieController {
 				return;
 			}
 		}
+		
 		try {
 			List<MovieRating> movies = movieDAO.getRatingsByYear(year, limit, voteLimit);
 			if (movies.isEmpty()) {

@@ -19,59 +19,60 @@
 
  **James Williams, A University Student**
 
-James, age 19, is a University Student studying Psychology at the University of Surrey in South East England.  He was born in Kent and lives 1 hour from the University, but he stays on campus in a house with his friends. His mother is a GP and his father is a PE teacher at a secondary school. Jack also has a younger sister who is in college training to be a musical theatre performer. He is currently unemplyed as he is focusing on his studies, but used to be an English tutor for GCSE students when he was studying for his A Levels.
+James, age 19, is a First Year Psychology University Student at the University of Surrey.  He was born in Kent, where his mother is a GP and his father is a PE teacher at a secondary school. Despite living less than an hour from the University, he stays on campus with his friends.  Jack also has a younger sister who is in college training to be a musical theatre performer. He is currently unemployed as he is focusing on his studies, but used to be an English tutor for GCSE students while studying for his A Levels.
 
-He is in his first year at University and as well as his completing his degree, he enjoys going to different University societies and spending time with his housemates. His favourite society is the Film Society, and he frequently hosts movie nights for his friends.
+James is passionate about film, and is an active member of the Film Society, frequently hosting movie nights for his friends. He enjoys a wide range of films and likes to follow specific actor and director. He values quick access to ratings and filmographies to help him choose films that will appeal to the whole group. James' ideal app would allow him to efficiently discover new content quickly, track the work of his favourite actors and directors, and find something to suit everyone's tastes.
 
 ### Persona 2
 
 **Sarah King, A Small Business Owner**
 
-[add persona description]
+Sarah is a 42-year-old business owner from Manchester who runs a successful online craft store while raising her 2 children (aged 5 an 9) with her husband, a chef. She has a degree in Business Management from the University of Sheffield, and decided to start her own company at 25. Sarah enjoys watching films with her family, but is often extremely busy with work, as well as looking after her kids and home and does not have time to browse endlessly or research reviews. She would value being able to quickly find a good film to watch that her whole family would enjoy, and movies for her to watch with her husband with their favourite actors, without having to filter through many options.
 
 ## 1.2 Scenario
 
-** [add scenario title ]**
+**Movie Marathon**
 
-[add scenario description ]
+James is hosting a movie marathon for his friend's birthday, and her favourite actor is Andrew Garfield. There are around 10 guests coming and they have enough time to watch 5 films, but James wants to make sure that every film is a crowd-pleaser. James opens the FlickFinder app and searches for movies starring Andrew Garfield. He then looks at the ratings of these movies as well as their directors, and picks 5 that he thinks will be best received by the group. By using the app, he was able to make quick, informed decisions without having to search multiple websites for information.
+
 
 ## 1.3 User Stories
 
 ### User Story 1
 
-** [add user story title ]**
+**Searching By Actor**
 
-[add user story description ]
+As a film enthusiast, I want to search for films by a specific actor so that I can easily find films featuring my favourites.
 
 ### User Story 2
 
-** [add user story title ]**
+**Searching By Director**
 
-[add user story description ]
+As a film student, I want to search for films by  director so that I can explore all of a director's work in one place.
 
 ### User Story 3
 
-** [add user story title ]**
+**Searching For Cast**
 
-[add user story description ]
+As a casual viewer, I want to see the full cast of a movie to discover more actors I might enjoy.
 
 ### User Story 4
 
-** [add user story title ]**
+**Searching By Ratings **
 
-[add user story description ]
+As a busy student, I want to find movies with high rated movies quickly to save time when choosing what to watch.
 
 ### User Story 5
 
-** [add user story title ]**
+**Limiting Searches**
 
-[add user story description ]
+As a busy parent, I want to narrow my search results based on specific criteria so that I can find a suitable movie more quickly.
 
 ### User Story 6
 
-** [add user story title ]**
+**Searching By Year**
 
-[add user story description ]
+As a nostalgic film watcher, I want to be able to search for movies by year so that I can easily find films from my childhood or a specific era.
 
 ## 2 Critical Analysis and Reflection
 

@@ -188,10 +188,10 @@ class MovieControllerTest {
 	void testGetRatingsByYearWithVoteLimit() throws SQLException {
 	    when(ctx.pathParam("year")).thenReturn("1994");
 	    when(ctx.queryParam("limit")).thenReturn("50");
-	    when(ctx.queryParam("voteLimit")).thenReturn("20000");
+	    when(ctx.queryParam("votes")).thenReturn("200");
 	    movieController.getRatingsByYear(ctx);
 
-	    verify(movieDAO).getRatingsByYear(1994, 50, 20000);
+	    verify(movieDAO).getRatingsByYear(1994, 50, 200);
 	}
 
 	@Test

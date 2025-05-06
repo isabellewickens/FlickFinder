@@ -43,6 +43,20 @@ public class MovieDAO {
 	 * @throws SQLException if a database error occurs
 	 */
 
+	public List<Movie> getAllMovies() throws SQLException {
+		List<Movie> movies = new ArrayList<>();
+
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery("select * from movies LIMIT 50");
+
+		while (rs.next()) {
+			movies.add(new Movie(rs.getInt("id"), rs.getString("title"), rs.getInt("year")));
+		}
+
+		return movies;
+	}
+	
+	
 	public List<Movie> getAllMovies(int limit) throws SQLException {
 		List<Movie> movies = new ArrayList<>();
 
