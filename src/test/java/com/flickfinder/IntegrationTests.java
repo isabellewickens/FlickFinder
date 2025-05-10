@@ -99,6 +99,8 @@ class IntegrationTests {
 		given().when().get(baseURL + "/movies/1/stars").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
 				.body("name", hasItems("Tim Robbins", "Morgan Freeman")).body("birth", hasItems(1958, 1937));
 	}
+	
+	
 
 
 	/**

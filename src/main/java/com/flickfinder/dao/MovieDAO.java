@@ -55,8 +55,7 @@ public class MovieDAO {
 
 		return movies;
 	}
-	
-	
+
 	public List<Movie> getAllMovies(int limit) throws SQLException {
 		List<Movie> movies = new ArrayList<>();
 
@@ -116,6 +115,25 @@ public class MovieDAO {
 
 	}
 
+	public List<MovieRating> getRatingsByYear(int year) throws SQLException {
+
+		List<MovieRating> movies = new ArrayList<>();
+		String statement = "SELECT movies.id, movies.title, ratings.rating, ratings.votes, movies.year FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE movies.year = ?";
+		PreparedStatement ps = connection.prepareStatement(statement);
+		ps.setInt(1, year);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			movies.add(new MovieRating(rs.getInt("id"), rs.getString("title"), rs.getDouble("rating"),
+					rs.getInt("votes"), rs.getInt("year")));
+
+		}
+
+		return movies;
+
+	}
+
 	public List<MovieRating> getRatingsByYear(int year, int limit, int voteLimit) throws SQLException {
 
 		List<MovieRating> movies = new ArrayList<>();
@@ -136,5 +154,4 @@ public class MovieDAO {
 		return movies;
 
 	}
-
 }
