@@ -21,7 +21,7 @@
 
 James, age 19, is a First Year Psychology University Student at the University of Brighton.  He was born in Kent, where his mother is a GP and his father is a PE teacher at a secondary school. Despite living less than an hour from the University, he stays on campus with his friends to completely immerse himself in university life and become more independent. James also has a younger sister who is in college training to be a musical theatre performer, but they love spending time with each other and watching their favourite movie musicals when he is home. He is currently unemployed as he is focusing on his studies, but used to be an English tutor for GCSE students while studying for his A Levels.
 
-James is passionate about film, and is an active member of the Film Society, frequently hosting movie nights for his friends as he is known for his great recommendations. He is particularly interested in the people behind the scenes, and can name the cast and crew of most films off the top of his head. James grew up watching classics with his dad and now enjoys discovering new releases and hidden gems with his peers. He enjoys a wide range of films and likes to follow specific actors and directors, his favourite being Steven Spielberg. He regularly researches film casts and behind-the-scenes trivia. He often uses his phone to browse ratings, read reviews and explore cast lists to learn more about his favourite films, and to choose films to add to a watchlist that would appeal to his friend group. He also takes pride in introducing them to lesser-known films and small directors that they may not have heard of. James' ideal app would allow him to efficiently search for movies based on their cast, track the work of his favourite actors and directors, and find something to suit everyone's tastes. He likes the idea of having ratings and film details in one place, and discovering up-and-coming filmmakers. He values quick access to up-to-date information, and hopes FlickFinder will not only save him time but also deepen his enjoyment of cinema by helping him explore and share a wider range of films he can enjoy with the people around him. For James, FlickFinder would fuel his curiosity and help him share his passion for film with his friends and family.
+James is passionate about film, and is an active member of the Film Society, frequently hosting movie nights for his friends as he is known for his great recommendations. He is particularly interested in the people behind the scenes, and can name the cast and crew of most films off the top of his head. James grew up watching classics with his dad and now enjoys discovering new releases and hidden gems with his peers. He enjoys a wide range of films and likes to follow specific actors and directors, his favourite being Steven Spielberg. He regularly researches film casts and behind-the-scenes trivia. He often uses his phone to browse ratings, read reviews and explore cast lists to learn more about his favourite films, and to choose films to add to a watchlist that would appeal to his friend group. He also takes pride in introducing them to lesser-known films and small directors that they may not have heard of. James' ideal app would allow him to efficiently search for movies based on their cast, track the work of his favourite actors and directors, and find something to suit everyone's tastes. He likes the idea of having ratings and film details in one place, and discovering up-and-coming filmmakers. He values quick access to up-to-date information, and hopes FlickFinder will not only save him time but also deepen his enjoyment of cinema by helping him explore and share a wider range of films he can enjoy with the people around him. He would be able to use the app to find new films to enjoy with his peers, and learn more about how his parents grew up by enjoying hits from their childhood. For James, FlickFinder would fuel his curiosity and help him share his passion for film with his friends and family.
 
 ### Persona 2
 
@@ -45,6 +45,12 @@ The final selection spans multiple genres, including a musical, drama, and an ac
 
 
 ------------how is this? and do statements need to be more formal-------------------
+
+
+-Integration Test
+-To Strings
+-Other Tests
+-Edited James
 
 
 ## 1.3 User Stories
@@ -100,5 +106,6 @@ As a nostalgic film watcher, I want to be able to search for movies by year so t
 [use a know referencing style, for example APA, Harvard, etc.]
 
 IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows (no date). Available at: https://www.imdb.com/ (Accessed: 10 May 2025).
+
 Rotten Tomatoes: Movies | TV Shows | Movie Trailers | Reviews | Rotten Tomatoes (no date). Available at: https://www.rottentomatoes.com/ (Accessed: 10 May 2025).
 
