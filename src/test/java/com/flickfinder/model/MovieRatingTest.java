@@ -5,15 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test for the MovieRating Model.
+ * 
+ * 
+ */
 public class MovieRatingTest {
 
+	/**
+	 * The movie rating object to be tested.
+	 */
 	private MovieRating movieRating;
 	
+	/**
+	 * Set up the movie rating object before each test.
+	 *
+	 */
 	@BeforeEach
 	public void setUp() {
 		movieRating = new MovieRating(1, "The Matrix", 7.4, 1234, 1999);
 	}
 	
+	/**
+	 * Test the movie rating object is created with the correct values.
+	 */
 	@Test
 	public void testMovieRatingCreated() {
 		assertEquals(1, movieRating.getId());
@@ -24,6 +39,9 @@ public class MovieRatingTest {
 		assertEquals(1234, movieRating.getVotes());
 	}
 	
+	/**
+	 * Test the movie rating object is created with the correct values.
+	 */
 	@Test
 	public void testMovieRatingSetters() {
 		movieRating.setId(2);

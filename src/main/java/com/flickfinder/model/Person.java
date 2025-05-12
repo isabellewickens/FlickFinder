@@ -6,66 +6,88 @@ package com.flickfinder.model;
  * @TODO: Implement this class
  */
 public class Person {
-
-	// - Add your code here: use the MovieDAO.java as an example
-	// - Check the ERD and database schema in the docs folder
-	// (./docs/database_schema.md) to ensure each column in the People table
-	// has an attribute in the model. (DELETE THIS COMMENT WHEN DONE)
 	
 	private int id;
 	private String name;
 	private int birth;
 
 
+	/**
+	 * Constructs a Movie object with the specified id, title, and year.
+	 *
+	 * @param id    the unique identifier of the movie
+	 * @param title the title of the movie
+	 * @param year  the release year of the movie
+	 */
 	public Person(int id, String name, int birth) {
 		this.id = id;
 		this.name = name;
 		this.birth = birth;
 	}
 
-	
+	/**
+	 * Returns the unique identifier of the person.
+	 *
+	 * @return the id of the person
+	 */
 	public int getId() {
 		return id;
 	}
 
-	
+	/**
+	 * Sets the unique identifier of the person.
+	 *
+	 * @param id the id to set
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	
+	/**
+	 * Returns the name of the person.
+	 *
+	 * @return the name of the person
+	 */
 	public String getName() {
 		return name;
 	}
 
-	
+	/**
+	 * Sets the name of the person.
+	 *
+	 * @param name the name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	
+	/**
+	 * Returns the year of birth of the person.
+	 *
+	 * @return the birth of the person
+	 */
 	public int getBirth() {
 		return birth;
 	}
 
 	/**
-	 * Sets the release year of the movie.
+	 * Sets the birth year of the person.
 	 *
-	 * @param year the release year to set
+	 * @param birth the birth year to set
 	 */
 	public void setBirth(int birth) {
 		this.birth = birth;
 	}
 
 	/**
-	 * Returns a string representation of the Movie object.
+	 * Returns a string representation of the Person object.
 	 * This is primarily used for debugging purposes.
 	 *
-	 * @return a string representation of the Movie object
+	 * @return a string representation of the Person object
 	 */
 	@Override
 	public String toString() {
-		return id + "|" + name + "|" + birth ;
+		return "Person [id=" + id + ", name=" + name + ", birth=" + birth + "]";
 	}
 
 

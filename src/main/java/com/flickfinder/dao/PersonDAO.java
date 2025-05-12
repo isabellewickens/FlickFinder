@@ -13,35 +13,40 @@ import com.flickfinder.model.Person;
 import com.flickfinder.util.Database;
 
 /**
- * TODO: Implement this class
+ * The Data Access Object for the Person table.
+ * 
+ * This class is responsible for getting data from the Movies table in the
+ * database.
  * 
  */
 public class PersonDAO {
 
-	// for the must have requirements, you will need to implement the following
-	// methods:
-	// - getAllPeople()
-	// - getPersonById(int id)
-	// you will add further methods for the more advanced tasks; however, ensure
-	// your have completed
-	// the must have requirements before you start these.
-
+	/**
+	 * The connection to the database.
+	 */
 	private final Connection connection;
 
+	/**
+	 * Constructs a SQLitePersonDAO object and gets the database connection.
+	 * 
+	 */
 	public PersonDAO() {
-			Database database = Database.getInstance();
-			connection = database.getConnection();
-		}
+		Database database = Database.getInstance();
+		connection = database.getConnection();
+	}
 
-	public List<Person> getAllPeople(int limit) throws SQLException {
+	/**
+	 * Returns a list of all people in the database.
+	 * 
+	 * @return a list of all people in the database
+	 * @throws SQLException if a database error occurs
+	 */
+
+	public List<Person> getAllPeople() throws SQLException {
 		List<Person> people = new ArrayList<>();
-		
-		String statement = "select * from people LIMIT ?";
 
-		PreparedStatement ps = connection.prepareStatement(statement);
-		ps.setInt(1, limit);
-		ResultSet rs = ps.executeQuery();
-
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery("select * from people LIMIT 50");
 
 		while (rs.next()) {
 			people.add(new Person(rs.getInt("id"), rs.getString("name"), rs.getInt("birth")));
@@ -50,7 +55,36 @@ public class PersonDAO {
 		return people;
 	}
 
-	
+	/**
+	 * Returns a list of a limited number of people in the database.
+	 * Overrides the original function without a limit.
+	 * 
+	 * @return a list of a limited number of people in the database
+	 * @throws SQLException if a database error occurs
+	 */
+	public List<Person> getAllPeople(int limit) throws SQLException {
+		List<Person> people = new ArrayList<>();
+
+		String statement = "select * from people LIMIT ?";
+
+		PreparedStatement ps = connection.prepareStatement(statement);
+		ps.setInt(1, limit);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			people.add(new Person(rs.getInt("id"), rs.getString("name"), rs.getInt("birth")));
+		}
+
+		return people;
+	}
+
+	/**
+	 * Returns the person with the specified id.
+	 * 
+	 * @param id the id of the person
+	 * @return the person with the specified id
+	 * @throws SQLException if a database error occurs
+	 */
 	public Person getPersonById(int id) throws SQLException {
 
 		String statement = "select * from people where id = ?";
@@ -69,6 +103,13 @@ public class PersonDAO {
 
 	}
 
+	/**
+	 * Returns the movies starring a specified person.
+	 * 
+	 * @param id the id of the person
+	 * @return the list of movies starring specified person
+	 * @throws SQLException if a database error occurs
+	 */
 	public List<Movie> getMoviesStarringPerson(int id) throws SQLException {
 
 		List<Movie> movies = new ArrayList<>();
@@ -82,11 +123,9 @@ public class PersonDAO {
 			movies.add(new Movie(rs.getInt("id"), rs.getString("title"), rs.getInt("year")));
 
 		}
-	
+
 		return movies;
 
-
 	}
-
 
 }

@@ -17,7 +17,6 @@ import io.javalin.http.Context;
 /**
  * Test for the Movie Controller.
  */
-
 class MovieControllerTest {
 
 	/**
@@ -34,7 +33,6 @@ class MovieControllerTest {
 	/**
 	 * The movie controller.
 	 */
-
 	private MovieController movieController;
 
 	@BeforeEach
@@ -52,7 +50,6 @@ class MovieControllerTest {
 	 * Tests the getAllMovies method.
 	 * We expect to get a list of all movies in the database.
 	 */
-
 	@Test
 	void testGetAllMovies() {
 		when(ctx.queryParam("limit")).thenReturn(null);
@@ -64,6 +61,10 @@ class MovieControllerTest {
 		}
 	}
 
+	/**
+	 * Tests the getAllMovies method with a limit.
+	 * We expect to get a list of a specified number of movies in the database.
+	 */
 	@Test
 	void testGetAllMoviesLimit() {
 		when(ctx.queryParam("limit")).thenReturn("10");
@@ -89,10 +90,35 @@ class MovieControllerTest {
 	}
 
 	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetAllMoviesWithInvalidLimit() throws SQLException {
+	    when(ctx.queryParam("limit")).thenReturn("invalid");
+	    movieController.getAllMovies(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Limit must be a positive integer.");
+	}
+
+	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetAllMoviesWithNegativeLimit() throws SQLException {
+	    when(ctx.queryParam("limit")).thenReturn("-2");
+	    movieController.getAllMovies(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Limit must be a positive integer.");
+	}
+
+	/**
 	 * Tests the getMovieById method.
 	 * We expect to get the movie with the specified id.
 	 */
-
 	@Test
 	void testGetMovieById() {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -109,7 +135,6 @@ class MovieControllerTest {
 	 * 
 	 * @throws SQLException
 	 */
-
 	@Test
 	void testThrows500ExceptionWhenGetByIdDatabaseError() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -125,7 +150,6 @@ class MovieControllerTest {
 	 * 
 	 * @throws SQLException
 	 */
-
 	@Test
 	void testThrows404ExceptionWhenNoMovieFound() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -134,6 +158,10 @@ class MovieControllerTest {
 		verify(ctx).status(404);
 	}
 
+	/**
+	 * Tests the getPeopleByMovieId method.
+	 * We expect to the stars in the movie specified id.
+	 */
 	@Test
 	void testGetPeopleByMovieID() {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -145,6 +173,11 @@ class MovieControllerTest {
 		}
 	}
 
+	/**
+	 * Test a 500 status code is returned when a database error occurs.
+	 * 
+	 * @throws SQLException
+	 */
 	@Test
 	void testThrows500ExceptionWhenGetPeopleByMovieIdDatabaseError() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -153,6 +186,13 @@ class MovieControllerTest {
 		verify(ctx).status(500);
 	}
 
+	/**
+	 * Test that the controller returns a 404 status code when a movie is not found
+	 * or
+	 * database error.
+	 * 
+	 * @throws SQLException
+	 */
 	@Test
 	void testThrows404ExceptionWhenNoMovieFound2() throws SQLException {
 		when(ctx.pathParam("id")).thenReturn("1");
@@ -161,6 +201,10 @@ class MovieControllerTest {
 		verify(ctx).status(404);
 	}
 
+	/**
+	 * Tests the GetRatingsByYear method.
+	 * We expect get a list of movies from specified year.
+	 */
 	@Test
 	void testGetRatingsByYear() {
 		when(ctx.pathParam("year")).thenReturn("1994");
@@ -173,7 +217,24 @@ class MovieControllerTest {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Test that the controller returns a 400 status code when an invalid year is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetRatingsByYearInvalidYear() throws SQLException {
+	    when(ctx.pathParam("year")).thenReturn("invalid");
+	    movieController.getRatingsByYear(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Year not valid.");
+	}
+
+	/**
+	 * Tests the GetRatingsByYear method when a limit is applied.
+	 * We expect get a list of movies from specified year.
+	 */
 	@Test
 	void testGetRatingsByYearWithLimit() throws SQLException {
 	    when(ctx.pathParam("year")).thenReturn("1994");
@@ -183,7 +244,39 @@ class MovieControllerTest {
 
 	    verify(movieDAO).getRatingsByYear(1994, 5, 1000);
 	}
-	
+
+	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetRatingsByYearInvalidLimit() throws SQLException {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("invalid");
+	    when(ctx.queryParam("voteLimit")).thenReturn("1000");
+	    movieController.getRatingsByYear(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Limit must be a positive integer.");
+	}
+
+	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetRatingsByYearNegativeLimit() throws SQLException {
+	    when(ctx.queryParam("limit")).thenReturn("-2");
+	    movieController.getRatingsByYear(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Year not valid.");
+	}
+
+	/**
+	 * Tests the GetRatingsByYear method when a limit is applied.
+	 * We expect get a list of movies from specified year.
+	 */
 	@Test
 	void testGetRatingsByYearWithVoteLimit() throws SQLException {
 	    when(ctx.pathParam("year")).thenReturn("1994");
@@ -194,6 +287,41 @@ class MovieControllerTest {
 	    verify(movieDAO).getRatingsByYear(1994, 50, 200);
 	}
 
+	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetRatingsByYearInvalidVoteLimit() throws SQLException {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("votes")).thenReturn("invalid");
+	    movieController.getRatingsByYear(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Limit must be a positive integer.");
+	}
+
+	/**
+	 * Test that the controller returns a 400 status code when an invalid limit is entered.
+	 * 
+	 * @throws SQLException
+	 */
+	@Test
+	void testGetRatingsByYearNegativeVoteLimit() throws SQLException {
+		when(ctx.pathParam("year")).thenReturn("1994");
+	    when(ctx.queryParam("limit")).thenReturn("50");
+	    when(ctx.queryParam("votes")).thenReturn("-2");
+	    movieController.getRatingsByYear(ctx);
+	    verify(ctx).status(400);
+	    verify(ctx).result("Limit must be a positive integer.");
+	}
+
+	/**
+	 * Test a 500 status code is returned when a database error occurs.
+	 * 
+	 * @throws SQLException
+	 */
 	@Test
 	void testThrows500ExceptionWhenGetRatingsByYearDatabaseError() throws SQLException {
 		when(ctx.pathParam("year")).thenReturn("1994");
@@ -204,6 +332,13 @@ class MovieControllerTest {
 		verify(ctx).status(500);
 	}
 
+	/**
+	 * Test that the controller returns a 404 status code when a movie is not found
+	 * or
+	 * database error.
+	 * 
+	 * @throws SQLException
+	 */
 	@Test
 	void testThrows404ExceptionWhenNoMovieFound3() throws SQLException {
 		when(ctx.pathParam("year")).thenReturn("1994");

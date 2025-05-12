@@ -68,6 +68,14 @@ class IntegrationTests {
 								"The Dark Knight", "12 Angry Men"))
 				.body("year", hasItems(1994, 1972, 1974, 2008, 1957));
 	}
+	
+	@Test
+	void retrieves_a_list_of_all_movies_with_limit() {
+		given().queryParam("limit", 2).when().get(baseURL + "/movies").then().assertThat().statusCode(200). // Assuming a successful
+		// response returns HTTP
+		// 200
+				body("size()", equalTo(2));
+	}
 
 	@Test
 	void retrieves_a_single_movie_by_id() {
@@ -85,6 +93,11 @@ class IntegrationTests {
 						hasItems("Tim Robbins", "Morgan Freeman", "Christopher Nolan", "Al Pacino", "Henry Fonda"))
 				.body("birth", hasItems(1958, 1937, 1970, 1940, 1905));
 	}
+	
+	@Test
+	void retrieves_a_list_of_all_people_with_limit() {
+		given().queryParam("limit", 2).when().get(baseURL + "/people?limit=2").then().assertThat().statusCode(200).body("size()", equalTo(2));
+	}
 
 	@Test
 	void retrieves_a_single_person_by_id() {
@@ -100,8 +113,26 @@ class IntegrationTests {
 				.body("name", hasItems("Tim Robbins", "Morgan Freeman")).body("birth", hasItems(1958, 1937));
 	}
 	
-	
+	@Test
+	void retrieves_movies_by_year() {
 
+		given().when().get(baseURL + "/movies/ratings/1994").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
+				.body("name", hasItems("The Shawshank Redemption", "The River Wild")).body("ratings", hasItems(9.3, 7.2));
+	}
+	
+	@Test
+	void retrieves_movies_by_year_with_limit() {
+
+		given().when().get(baseURL + "/movies/ratings/1994?limit=1").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
+				.body("name", hasItems("The Shawshank Redemption")).body("ratings", hasItems(9.3));
+	}
+
+	@Test
+	void retrieves_movies_by_year_with_vote_limit() {
+
+		given().when().get(baseURL + "/movies/ratings/1957?votes=1000").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
+				.body("name", hasItems("12 Angry Men")).body("year", hasItems(1957));
+	}
 
 	/**
 	 * Tears down the application after each test. We want to make sure that each

@@ -1,11 +1,4 @@
-# COM1008 - Software Engineering
-
-
-[Lines in square brackets are placeholders or instructions; you should replace them with the appropriate information. Please ensure no placeholder text is left in the final version (including this line, and the Lines below).]
-
-[As this is a markdown file, you should edit it in a IDE or text editor that supports markdown - don't use Microsoft Word or other word processors. For more information on markdown, see: https://www.markdownguide.org/]
-
-[** Before you submit, preview the rendered version of the file to ensure it is formatted correctly. Gitlab will render the markdown file as HTML, so please check the output is correct. Also, you can use an IDE or text editor that supports markdown to preview the file (e.g., VSCode). ** ] 
+# COM1028 - Software Engineering
 
 # Assignment 1 - Report
 
@@ -17,40 +10,33 @@
 
 ### Persona 1
 
- **James Williams, A University Student**
+**James Williams, University Student**
 
-James, age 19, is a First Year Psychology University Student at the University of Brighton.  He was born in Kent, where his mother is a GP and his father is a PE teacher at a secondary school. Despite living less than an hour from the University, he stays on campus with his friends to completely immerse himself in university life and become more independent. James also has a younger sister who is in college training to be a musical theatre performer, but they love spending time with each other and watching their favourite movie musicals when he is home. He is currently unemployed as he is focusing on his studies, but used to be an English tutor for GCSE students while studying for his A Levels.
+James, age 19, is a first-year Psychology student at the University of Brighton.  Born in Kent, his mother a doctor and his father a secondary school Physics teacher, he lives less than an hour from the University but chose to stay in student accommodation with his friends to fully immerse himself in university life and gain independence. James also has a younger sister who is in college training to be a musical theatre performer, but they love spending time together watching their favourite movie musicals when he is home. He is currently unemployed as he is focusing on his studies but used to be an English tutor for GCSE students while studying for his A Levels.
 
-James is passionate about film, and is an active member of the Film Society, frequently hosting movie nights for his friends as he is known for his great recommendations. He is particularly interested in the people behind the scenes, and can name the cast and crew of most films off the top of his head. James grew up watching classics with his dad and now enjoys discovering new releases and hidden gems with his peers. He enjoys a wide range of films and likes to follow specific actors and directors, his favourite being Steven Spielberg. He regularly researches film casts and behind-the-scenes trivia. He often uses his phone to browse ratings, read reviews and explore cast lists to learn more about his favourite films, and to choose films to add to a watchlist that would appeal to his friend group. He also takes pride in introducing them to lesser-known films and small directors that they may not have heard of. James' ideal app would allow him to efficiently search for movies based on their cast, track the work of his favourite actors and directors, and find something to suit everyone's tastes. He likes the idea of having ratings and film details in one place, and discovering up-and-coming filmmakers. He values quick access to up-to-date information, and hopes FlickFinder will not only save him time but also deepen his enjoyment of cinema by helping him explore and share a wider range of films he can enjoy with the people around him. He would be able to use the app to find new films to enjoy with his peers, and learn more about how his parents grew up by enjoying hits from their childhood. For James, FlickFinder would fuel his curiosity and help him share his passion for film with his friends and family.
+Passionate about film and an active member of the Film Society, James frequently hosts movie nights for his friends as he is known for his great recommendations. With great movie knowledge, he can readily identify the cast of most films. James grew up watching classics with his dad and now enjoys discovering new releases with his peers. He enjoys a wide range of films and likes to follow specific actors and directors, his favourite being Steven Spielberg. He regularly researches film casts and behind-the-scenes trivia. He often uses his phone to browse ratings, read reviews and explore cast lists to learn more about his favourite films. He also likes ot find lesser-known films and small directors that he may not have heard of. James' ideal app would allow him to efficiently search for movies based on their cast, track the work of his favourite actors and directors, and find something to suit everyone's tastes. He likes the idea of having ratings and film details in one place and discovering up-and-coming filmmakers.
+
+His ideal application would allow him to search efficiently by actor or director and access detailed filmographies, explore up-to-date ratings and reviews and create his own, and make watchlists to keep track of the films he would like to see. He hopes *FlickFinder* will not only save him time but also help him explore and share a wider range of films that he can enjoy with friends and family and learn more about how his parents grew up by enjoying hits from their childhood. For James, *FlickFinder* would help him share his passion for film with his friends and family.
 
 ### Persona 2
 
-**Daisy King, A Small Business Owner**
+**Daisy King, Small Business Owner**
 
-Daisy is a 42-year-old business owner from Manchester who runs a successful online craft store while raising her two children (aged 5 and 9) with her husband, a chef. She has a degree in Business Management from the University of Sheffield, and started her own company at 25, hand-making a range of products from jewellery to personalised cards. Her husband has very long hours, so working from home leaves her balancing most household and parenting responsibilities with running her business, as she is the primary caregiver for their children. Her store has grown steadily over the years, but with handling everything from marketing and customer service to crafting the products herself, it's hard to keep up with family life while keeping her items at a high quality and satisfying her customers. She is always looking for ways to streamline her tasks, at home and at work, to prioritise time with her family.
+Daisy is a 42-year-old business owner from Manchester who runs a successful online craft store while raising two young children (aged 5 and 9) with her husband, a professional chef. She has a degree in Business Management from the University of Sheffield, and started her own company at 25, hand-making a range of products from jewellery to personalised cards. Due to her husband's busy work schedule, Daisy manages most parenting and household responsibilities alongside running her business from home. Handling all aspects of her company, from product design to marketing and customer service, it's hard to spend time with her family while keeping her items at a high quality and satisfying her customers. She is always looking for ways to save time, at home and at work, to prioritise time with her family.
 
-In the little free time she has, she enjoys watching romantic comedies with her husband, and attending a book club with friends. Many of her favourite books are currently being adapted into films and she is looking forward to watching them with her friends. She often struggles to find time to relax, so reading provides her a moment for herself. When working from home while the kids are around, she often puts on a film to keep them entertained but finds it difficult to find content that is both appropriate and engaging without browsing endlessly or researching reviews. Daisy would value an app that helps her quickly find suitable films for her children, as well as something fun to watch with her husband. She would also like to stay updated on new releases and keep track of upcoming adaptations of her favourite books. She is well-accustomed to using apps to run her business, so FlickFinder would fit into her routine as another organisation tool. For Daisy, FlickFinder is a practical solution to reduce stress and free up time for the things that matter most.
+In the little free time she has, she enjoys watching romantic comedies with her husband, and going to a local book club with friends. Many of her favourite books are currently being adapted into films and she is looking forward to watching them with her friends. She often struggles to find time to relax, so reading provides her a moment for herself. When working from home while the kids are around, she often puts on a film to keep them entertained but finds it difficult to find content that is appropriate and engaging without browsing endlessly or researching reviews. Daisy would like an app that helps her quickly find suitable films for her children, as well as something fun to watch with her husband. She would also like to stay informed about new releases and keep track of upcoming adaptations of her favourite books. She is used to using apps to run her business, so *FlickFinder* would fit into her routine as another organisation tool. For Daisy, *FlickFinder* is a practical solution to help reduce daily stress and make more time for her to spend with her family.
 
 ## 1.2 Scenario
 
 **James' Movie Marathon**
 
-James is hosting a movie marathon for his best friend, Olivia, to celebrate her 20th birthday. He has decorated his student accommodation and bought snacks, but must now choose the line-up of the night. He is having 11 friends over, several from the university film society, and must accommodate for their range of taste in films and make sure that every choice is a crowd-pleaser.
+James is organising a movie marathon for his best friend, Olivia, to celebrate her 20th birthday. He has decorated his student accommodation and bought snacks, but needs to select the perfect line-up for the evening. He is having 11 friends over, several from the university film society, and must  find films to suit their range of tastes and make sure that every choice is perfect.
 
-He has worked out there will be time for 5 films, so James opens the FlickFinder app on his phone to start looking. He creates a watchlist titled 'Olivia's Movie Marathon' to keep track of his selection, then navigates to the search bar. Olivia's favourite actor is Andrew Garfield, so he searches this name, and applies filters to sort results by  highest-rated film. He selects the first 5 results, and adds them to his watchlist for reference, but quickly notices that two of the films are part of The Amazing Spider-Man series. In order to maintain a wide range of films for the night and avoid redundancy, he removes one from the list. James then conducts a second search, this time filtering by director, and selects a lesser-known title with high ratings from a director he had not heard of, and adds it to his watchlist.
+He has worked out there will be time for five films, so James opens the *FlickFinder* application on his phone to start looking. He creates a watchlist titled 'Olivia's Movie Marathon' to keep track of his selection, then navigates to the search bar. Olivia's favourite actor is Andrew Garfield, so he searches this name, and applies filters to sort results by  highest-rated film. He initially selects the first five results, and adds them to his watchlist for reference, but notices that two are from *The Amazing Spider-Man* series. To maintain a wide range of films for the night and avoid redundancy, he removes one from the list. James then searches again, but filters by director, and selects a title with high ratings from a director he had not heard of and adds it to his watchlist.
 
-James then reviews his choices, and sees that one of the films has an ensemble cast with actors that he knows several of his friends love, which will make the night even better. He then spends a bit of time looking over the cast of each movie so that he can answer any questions his friends have, and makes some information cards for his friends to read and keep as mementos, including the film name, director, cast, release year, average rating and some fun facts.
+Happy with his choices, he also reviews the cast of each film in advance to answer any potential questions from his friends and makes some information cards for his friends to read and keep as mementos, including the film name, director, cast, release year, average rating and some fun facts.
 
-The final selection spans multiple genres, including a musical, drama, and an action-comedy, each from a different director. By using FlickFinder, James is able to plan the entire movie marathon in under 30 minutes. This would have usually taken over an hour to cross-reference difference websites (IMDB (IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows, no date), Rotten Tomatoes (Rotten Tomatoes: Movies | TV Shows | Movie Trailers | Reviews | Rotten Tomatoes), film forums...). The movie marathon is a huge success and the guests are very pleased with the lineup. Olivia was very pleased to see her favourite actor featuring in all of the films, and everyone is impressed with the care James put into the experience. FlickFinder did not just help him pick movies, but allowed him to create a memorable experience. James has now been asked to plan another one! 
-
-
-------------how is this? and do statements need to be more formal-------------------
-
-
--Integration Test
--To Strings
--Other Tests
--Edited James
+The final selection contains multiple genres, including a musical, drama, and an action-comedy, each from a different director. By using *FlickFinder*, James is able to plan the entire movie marathon in under 30 minutes. This would have usually taken over an hour to cross-reference different websites (IMDB (IMDb, no date), Rotten Tomatoes (Rotten Tomatoes, no date), film forums...). The movie marathon is a huge success, and the guests are very pleased with the lineup. Olivia was happy to see her favourite actor featuring in all of the films, and everyone is impressed with the care James put into the experience. James rated the movies they watched and encouraged his friends to do the same. *FlickFinder* not only helped him to pick the films but allowed him to create a memorable experience. Following the event, James is asked to organise another film night.
 
 
 ## 1.3 User Stories
@@ -59,53 +45,76 @@ The final selection spans multiple genres, including a musical, drama, and an ac
 
 **Searching By Actor**
 
-As a film enthusiast, I want to search for films by a specific actor so that I can easily find films featuring my favourites.
+As an actor, I want to search for films by an actor's name so that I can track my own filmography and monitor audience engagement with my work.
 
 ### User Story 2
 
 **Searching By Director**
 
-As a film student, I want to search for films by  director so that I can explore all of a director's work in one place.
+As a film student, I want to search for films by director so that I can explore all of their work in one place.
 
 ### User Story 3
 
-**Searching For Cast**
+**Ordering Results By Rating**
 
-As a casual viewer, I want to see the full cast of a movie to discover more actors I might enjoy.
+As a producer, I want to order search results by viewer rating so that I see which films are trending and performing well so that I can make informed decisions when funding new projects.
 
 ### User Story 4
 
-**Searching By Ratings **
+**Filtering Results**
 
-As a busy student, I want to find movies with high rated movies quickly to save time when choosing what to watch.
+As a busy parent, I want to filter films by age rating and content type so that I can quickly find something safe and suitable for my children to watch.
 
 ### User Story 5
 
-**Limiting Searches**
+**Searching By Year**
 
-As a busy parent, I want to narrow my search results based on specific criteria so that I can find a suitable movie more quickly.
+As a nostalgic film fan, I want to search for movies by release year so that I can easily find films from my childhood or a specific era.
 
 ### User Story 6
 
-**Searching By Year**
+**Limiting Results**
 
-As a nostalgic film watcher, I want to be able to search for movies by year so that I can easily find films from my childhood or a specific era.
+As a developer, I want to limit the number of search results returned per query to ensure that the database performance remains fast and scalable.
+
 
 ## 2 Critical Analysis and Reflection
 
 ### 2.1 Reflection
 
-[Insert a brief reflection succinctly covering what went well in this project and what could be improved.]
+Developing the requirements and backend for *FlickFinder* involved key software engineering techniques. Creating personas and scenarios helped me understand the project from the user's perspective. I gave each user a distinct background and motivation, making it easier to write varied user stories. Considering roles such as administrators was more challenging, pushing me to think beyond typical user interactions, reflecting a broader range of use cases.
+
+For the backend, I used Java, following a layered architecture. I built a RESTful API using Javalin, managing dependencies with Maven. Although new technologies for me, coding the models, DAOs and controllers was straightforward as many operations followed similar patterns.
+
+Using SQLite for querying the database, the main challenge involved using joins and subqueries, but referring to the ERD helped me understand the table relationships and structure the queries correctly. I used JUnit for unit tests and Hamcrest for integration testing. Hamcrest's matchers, such as *hasItems*, made the assertions more flexible (Testing with Hamcrest | Baeldung, no date). 
+
+This project improved my technical and planning skills, increasing understanding of how early-stage design techniques help clarify user needs. In future projects, I will aim to include a wider range of use roles, expanding the range of perspectives portrayed. Overall, I feel confident applying these technologies and techniques again to create effective, well-tested, user-focused software.
+
 
 ### 2.2 Professional Aspects
 
-[Insert information about professional aspects of software engineering related to the project.]
+To ensure the backend was maintainable and scalable, I used a layered architecture, applying MVC principles (Sommerville, 2015). This allows for high cohesion and modularity as each layer has a specific responsibility, making it easy to test components in isolation using unit tests. This architecture was particularly useful as the presentation layer was unknown. The system is maintainable as changes to one layer usually do not affect others. It is scalable due to its loose coupling, hence easy to add services such as authentication, demonstrating its longevity as it can be updated and extended. Adding limits to search queries reduces server load when handling large datasets, increasing energy efficiency as it requires less processing power.
+
+The Singleton class used for the unit testing database ensures the entire application uses the same connection, allowing for efficient resource management (careermgr, 2024). The MovieRating model extends the Movie model, demonstrating inheritance. I used encapsulation with private attributes and separation of responsibilities across layers. In the DAOs, I used method overriding to make the limit parameter optional, an example of polymorphism. These object-oriented techniques made the code more maintainable by reducing redundancy.
+
+As the app handles personal data, GDPR compliance is a priority (VinciWorks, 2022). Data collection should be minimised, stored securely, and only used for specific purposes. Users must consent to data collection, having the right to access and delete their information. Secure authentication should be used, with data stored on an encrypted server. To improve sustainability, cloud-based storage could be considered to reduce the need for physical servers (Buchan, 2024). These ethical, environmental and privacy concerns should be considered if the project were developed further. To improve professional responsibility in the future, I would add more detailed comments to aid readability and support collaboration.
+
 
 ## 3. References
 
-[use a know referencing style, for example APA, Harvard, etc.]
+Buchan, J. (2024) ‘Green app development: how to create an app more sustainably’, Zudu, 19 January. Available at: https://zudu.co.uk/blog/green-app-development-how-to-create-an-app-more-sustainably/ (Accessed: 10 May 2025).
+
+careermgr (2024) ‘Mastering the Singleton Pattern in Software Architecture: Efficiency and Global Access’, Curate Partners Merch, 14 October. Available at: https://curatepartners.com/blogs/skills-tools-platforms/mastering-the-singleton-pattern-in-software-architecture-efficiency-and-global-access/ (Accessed: 10 May 2025).
 
 IMDb: Ratings, Reviews, and Where to Watch the Best Movies & TV Shows (no date). Available at: https://www.imdb.com/ (Accessed: 10 May 2025).
 
 Rotten Tomatoes: Movies | TV Shows | Movie Trailers | Reviews | Rotten Tomatoes (no date). Available at: https://www.rottentomatoes.com/ (Accessed: 10 May 2025).
+
+Sommerville, I. (2015). Software engineering. 10th ed. Pearson.
+
+Testing with Hamcrest | Baeldung (no date). Available at: https://www.baeldung.com/java-junit-hamcrest-guide (Accessed: 10 May 2025).
+
+VinciWorks (2022) ‘What is GDPR in simple terms?’, VinciWorks, 31 March. Available at: https://vinciworks.com/blog/what-is-gdpr-in-simple-terms/ (Accessed: 10 May 2025)
+
+
 

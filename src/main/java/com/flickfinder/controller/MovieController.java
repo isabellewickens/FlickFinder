@@ -35,14 +35,14 @@ public class MovieController {
 	private final MovieDAO movieDAO;
 
 	/**
-	 * Constructs a MovieController object and initializes the movieDAO.
+	 * Constructs a MovieController object and initialises the movieDAO.
 	 */
 	public MovieController(MovieDAO movieDAO) {
 		this.movieDAO = movieDAO;
 	}
 
 	/**
-	 * Returns a list of all movies in the database.
+	 * Returns a list of all movies in the database, and limits the results if one is provided.
 	 * 
 	 * @param ctx the Javalin context
 	 */
@@ -97,6 +97,11 @@ public class MovieController {
 		}
 	}
 
+	/**
+	 * Returns the people starring in a specified movie.
+	 * 
+	 * @param ctx the Javalin context
+	 */
 	public void getPeopleByMovieId(Context ctx) {
 
 		int id = Integer.parseInt(ctx.pathParam("id"));
@@ -115,9 +120,28 @@ public class MovieController {
 		}
 	}
 
+	/**
+	 * Returns the movies in a certain year ordered by rating.
+	 * 
+	 * @param ctx the Javalin context
+	 */
 	public void getRatingsByYear(Context ctx) {
 
-		int year = Integer.parseInt(ctx.pathParam("year"));
+		int year;
+		
+		try {
+			year = Integer.parseInt(ctx.pathParam("year"));
+			;
+			if (year <= 0 || year >= 2025) {
+				ctx.status(400);
+				ctx.result("Year not valid.");
+				return;
+			}
+		} catch (NumberFormatException e) {
+			ctx.status(400);
+			ctx.result("Year not valid.");
+			return;
+		}
 
 		String givenLimit = ctx.queryParam("limit");
 		int limit = 50;

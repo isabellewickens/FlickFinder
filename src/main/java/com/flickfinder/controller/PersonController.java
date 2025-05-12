@@ -10,21 +10,31 @@ import com.flickfinder.model.Person;
 
 import io.javalin.http.Context;
 
-public class PersonController {
+/**
+ * The controller for the person endpoints.
+ * 
+ */
 
-	// to complete the must-have requirements you need to add the following methods:
-	// getAllPeople
-	// getPersonById
-	// you will add further methods for the more advanced tasks; however, ensure
-	// your have completed
-	// the must have requirements before you start these.
+public class PersonController {
+	
+	/**
+	 * The person data access object.
+	 */
 
 	private final PersonDAO personDAO;
 
+	/**
+	 * Constructs a PersonController object and initialises the personDAO.
+	 */
 	public PersonController(PersonDAO personDAO) {
 		this.personDAO = personDAO;
 	}
 
+	/**
+	 * Returns a list of all people in the database, and limits the results if one is provided.
+	 * 
+	 * @param ctx the Javalin context
+	 */
 	public void getAllPeople(Context ctx) {
 		try {
 			String givenLimit = ctx.queryParam("limit");
@@ -53,6 +63,11 @@ public class PersonController {
 		}
 	}
 
+	/**
+	 * Returns the person with the specified id.
+	 * 
+	 * @param ctx the Javalin context
+	 */
 	public void getPersonById(Context ctx) {
 
 		int id = Integer.parseInt(ctx.pathParam("id"));
@@ -71,6 +86,11 @@ public class PersonController {
 		}
 	}
 	
+	/**
+	 * Returns the movies that the specified person stars in.
+	 * 
+	 * @param ctx the Javalin context
+	 */
 	public void getMoviesStarringPerson(Context ctx) {
 
 		int id = Integer.parseInt(ctx.pathParam("id"));

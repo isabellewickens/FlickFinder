@@ -7,17 +7,19 @@ import org.junit.jupiter.api.Test;
 
 /**
  * 
- * TODO: Implement this class
+ * Test for the Person Model
  * 
  */
 
 class PersonTest {
 
-	
+	/**
+	 * The person object to be tested.
+	 */
 	private Person person;
 
 	/**
-	 * Set up the movie object before each test.
+	 * Set up the person object before each test.
 	 *
 	 */
 	@BeforeEach
@@ -25,7 +27,9 @@ class PersonTest {
 		person = new Person(1, "Zoe Weston", 2006);
 	}
 
-	
+	/**
+	 * Test the person object is created with the correct values.
+	 */
 	@Test
 	public void testPersonCreated() {
 		assertEquals(1, person.getId());
@@ -33,7 +37,9 @@ class PersonTest {
 		assertEquals(2006, person.getBirth());
 	}
 
-	
+	/**
+	 * Test the person object is created with the correct values.
+	 */
 	@Test
 	public void testPersonSetters() {
 		person.setId(2);

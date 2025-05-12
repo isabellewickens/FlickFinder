@@ -56,6 +56,13 @@ public class MovieDAO {
 		return movies;
 	}
 
+	/**
+	 * Returns a list of a limited number of movies in the database.
+	 * Overrides the original function without a limit.
+	 * 
+	 * @return a list of a limited number of movies in the database
+	 * @throws SQLException if a database error occurs
+	 */
 	public List<Movie> getAllMovies(int limit) throws SQLException {
 		List<Movie> movies = new ArrayList<>();
 
@@ -97,6 +104,13 @@ public class MovieDAO {
 
 	}
 
+	/**
+	 * Returns the stars of a movie with the specified id.
+	 * 
+	 * @param id the id of the movie
+	 * @return the list of people
+	 * @throws SQLException if a database error occurs
+	 */
 	public List<Person> getPeopleByMovieId(int id) throws SQLException {
 
 		List<Person> stars = new ArrayList<>();
@@ -115,10 +129,18 @@ public class MovieDAO {
 
 	}
 
+	/**
+	 * Returns the movies released in a specified year, ordered by their rating.
+	 * 
+	 * @param year the year of the movie
+	 * @return the movies from the specified year
+	 * @throws SQLException if a database error occurs
+	 */
 	public List<MovieRating> getRatingsByYear(int year) throws SQLException {
 
 		List<MovieRating> movies = new ArrayList<>();
-		String statement = "SELECT movies.id, movies.title, ratings.rating, ratings.votes, movies.year FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE movies.year = ?";
+		// SQL joins revised using: https://www.w3schools.com/sql/sql_join.asp
+		String statement = "SELECT movies.id, movies.title, ratings.rating, ratings.votes, movies.year FROM movies JOIN ratings ON movies.id = ratings.movie_id WHERE movies.year = ? ORDER BY ratings.rating DESC";
 		PreparedStatement ps = connection.prepareStatement(statement);
 		ps.setInt(1, year);
 		ResultSet rs = ps.executeQuery();
@@ -134,6 +156,16 @@ public class MovieDAO {
 
 	}
 
+	/**
+	 * Returns the movies released in a specified year, ordered by their rating.
+	 * Returned results are limited by number of votes and result limit.
+	 * 
+	 * @param year the year of the movie
+	 * @param limit the number of results
+	 * @param voteLimit the limit to number of votes
+	 * @return the movies from the specified year
+	 * @throws SQLException if a database error occurs
+	 */
 	public List<MovieRating> getRatingsByYear(int year, int limit, int voteLimit) throws SQLException {
 
 		List<MovieRating> movies = new ArrayList<>();
