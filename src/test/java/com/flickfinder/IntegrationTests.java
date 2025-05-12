@@ -71,7 +71,7 @@ class IntegrationTests {
 	
 	@Test
 	void retrieves_a_list_of_all_movies_with_limit() {
-		given().queryParam("limit", 2).when().get(baseURL + "/movies").then().assertThat().statusCode(200). // Assuming a successful
+		given().when().get(baseURL + "/movies?limit=2").then().assertThat().statusCode(200). // Assuming a successful
 		// response returns HTTP
 		// 200
 				body("size()", equalTo(2));
@@ -96,7 +96,7 @@ class IntegrationTests {
 	
 	@Test
 	void retrieves_a_list_of_all_people_with_limit() {
-		given().queryParam("limit", 2).when().get(baseURL + "/people?limit=2").then().assertThat().statusCode(200).body("size()", equalTo(2));
+		given().when().get(baseURL + "/people?limit=2").then().assertThat().statusCode(200).body("size()", equalTo(2));
 	}
 
 	@Test
@@ -129,8 +129,8 @@ class IntegrationTests {
 	@Test
 	void retrieves_movies_by_year_with_vote_limit() {
 
-		given().when().get(baseURL + "/movies/ratings/1957?votes=1000").then().assertThat().statusCode(200).body("id", hasItems(5))
-				.body("title", hasItems("12 Angry Men"));
+		given().when().get(baseURL + "/movies/ratings/1994?votes=500000").then().assertThat().statusCode(200).body("id", hasItems(1))
+				.body("title", hasItems("The Shawshank Redemption"));
 	}
 
 	/**
