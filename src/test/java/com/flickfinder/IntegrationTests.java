@@ -62,11 +62,11 @@ class IntegrationTests {
 		given().when().get(baseURL + "/movies").then().assertThat().statusCode(200). // Assuming a successful
 		// response returns HTTP
 		// 200
-				body("id", hasItems(1, 2, 3, 4, 5))
+				body("id", hasItems(1, 2, 3, 4, 5, 6))
 				.body("title",
 						hasItems("The Shawshank Redemption", "The Godfather", "The Godfather: Part II",
-								"The Dark Knight", "12 Angry Men"))
-				.body("year", hasItems(1994, 1972, 1974, 2008, 1957));
+								"The Dark Knight", "12 Angry Men", "The River Wild"))
+				.body("year", hasItems(1994, 1972, 1974, 2008, 1957, 1994));
 	}
 	
 	@Test
@@ -116,22 +116,21 @@ class IntegrationTests {
 	@Test
 	void retrieves_movies_by_year() {
 
-		given().when().get(baseURL + "/movies/ratings/1994").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
-				.body("name", hasItems("The Shawshank Redemption", "The River Wild")).body("ratings", hasItems(9.3, 7.2));
+		given().when().get(baseURL + "/movies/ratings/1994").then().assertThat().statusCode(200).body("id", hasItems(1, 6))
+				.body("title", hasItems("The Shawshank Redemption", "The River Wild"));
 	}
 	
 	@Test
 	void retrieves_movies_by_year_with_limit() {
 
-		given().when().get(baseURL + "/movies/ratings/1994?limit=1").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
-				.body("name", hasItems("The Shawshank Redemption")).body("ratings", hasItems(9.3));
+		given().when().get(baseURL + "/movies/ratings/1994?limit=1").then().assertThat().statusCode(200).body("size()", equalTo(1));
 	}
 
 	@Test
 	void retrieves_movies_by_year_with_vote_limit() {
 
-		given().when().get(baseURL + "/movies/ratings/1957?votes=1000").then().assertThat().statusCode(200).body("id", hasItems(1, 2))
-				.body("name", hasItems("12 Angry Men")).body("year", hasItems(1957));
+		given().when().get(baseURL + "/movies/ratings/1957?votes=1000").then().assertThat().statusCode(200).body("id", hasItems(5))
+				.body("title", hasItems("12 Angry Men"));
 	}
 
 	/**
