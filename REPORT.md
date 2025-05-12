@@ -45,7 +45,7 @@ The final selection contains multiple genres, including a musical, drama, and an
 
 **Searching By Actor**
 
-As an actor, I want to search for films by an actor's name so that I can track my own filmography and monitor audience engagement with my work.
+As an actor, I want to search for films by an actor's name so that I can track my own filmography and monitor audience response to my work.
 
 ### User Story 2
 
