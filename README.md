@@ -1,10 +1,15 @@
-## COM1028 Software Engineering - FlickFinder
+# COM1028 Software Engineering - FlickFinder
 
+## Individual Coursework | May 2025
+**Set By:** Joe Appleton
+**Grade:** 90%
+
+---
+
+## Overview
 This is the starting project for the COM1028 Software Engineering module. This project is a simple application that provides a RESTful API for accessing a movie database. The database is a simple SQLite database that contains information about movies, people, and their relationships.
 
-The badge below indicates if your submission compiled correctly. It may take some time to update. You can click the badge to see the jobs page and failure traces. You must ensure your project compiles correctly.
-
-[![Pipeline status](https://gitlab.surrey.ac.uk/csee/com1028/2024-25/com1028iw00291/badges/main/pipeline.svg)](https://gitlab.surrey.ac.uk/csee/com1028/2024-25/com1028iw00291/-/jobs/)
+---
 
 ## Dependencies
 
@@ -18,6 +23,8 @@ Overall, we have the following dependencies in our project:
 
 These dependencies are managed by Maven, and you can find them in the [pom.xml](pom.xml) file.
 
+---
+
 ## Database
 
 ### Development Database
@@ -29,6 +36,8 @@ The database is a simple SQLite database that contains information about movies,
 You've been given the IMDB movies database to work with. It is a simple database and you will only need to interact with it in a read only manner; you will not be adding data or modifying the database.
 
 You can find the database in the [src/main/resources](src/main/resources) folder. The database is called `movies.db`. You should not modify this database in any way. However, it won't be there until you run the project for the first time. I am using the com.googlecode.maven-download-plugin to pull the database in from a remote location. This is defined in the [pom.xml](pom.xml) file. It should be pulled when you run the project for the first time.
+
+---
 
 ### Testing Database
 
