@@ -1,7 +1,7 @@
 # COM1028 Software Engineering - FlickFinder
 
-## Individual Coursework | May 2025
-**Set By:** Joe Appleton
+### Individual Coursework | May 2025
+**Set By:** Joe Appleton   
 **Grade:** 90%
 
 ---
@@ -43,3 +43,5 @@ You can find the database in the [src/main/resources](src/main/resources) folder
 
 Although the development database is simple, it has a lot of data. This can make testing difficult. For testing we use a in-memory database. This database is created and populated with data before each test and destroyed after each test. This code can be found in [src/test/java/com/flickfinder/util/Seeder.java](src/test/java/com/flickfinder/util/Seeder.java).
 
+## Result  
+Achieved **90%** for effective API functionality, design process, and overall implementation.
